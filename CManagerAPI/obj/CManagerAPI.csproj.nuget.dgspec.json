@@ -1,0 +1,296 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerAPI/CManagerAPI.csproj": {}
+  },
+  "projects": {
+    "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerAPI/CManagerAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerAPI/CManagerAPI.csproj",
+        "projectName": "CManagerAPI",
+        "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerAPI/CManagerAPI.csproj",
+        "packagesPath": "/Users/illia_shevchenko/.nuget/packages/",
+        "outputPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerAPI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/illia_shevchenko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/CManagerApplication.csproj": {
+                "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/CManagerApplication.csproj"
+              },
+              "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj": {
+                "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj"
+              },
+              "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerServices/CManagerServices.csproj": {
+                "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerServices/CManagerServices.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/CManagerApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/CManagerApplication.csproj",
+        "projectName": "CManagerApplication",
+        "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/CManagerApplication.csproj",
+        "packagesPath": "/Users/illia_shevchenko/.nuget/packages/",
+        "outputPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/illia_shevchenko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj": {
+                "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.21.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj",
+        "projectName": "CManagerData",
+        "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj",
+        "packagesPath": "/Users/illia_shevchenko/.nuget/packages/",
+        "outputPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/illia_shevchenko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerServices/CManagerServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerServices/CManagerServices.csproj",
+        "projectName": "CManagerServices",
+        "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerServices/CManagerServices.csproj",
+        "packagesPath": "/Users/illia_shevchenko/.nuget/packages/",
+        "outputPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerServices/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/illia_shevchenko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/CManagerApplication.csproj": {
+                "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerApplication/CManagerApplication.csproj"
+              },
+              "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj": {
+                "projectPath": "/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/CManagerData.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

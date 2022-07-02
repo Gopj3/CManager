@@ -1,0 +1,10 @@
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/bin/Debug/netstandard2.1/CManagerData.deps.json
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/bin/Debug/netstandard2.1/CManagerData.dll
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/bin/Debug/netstandard2.1/CManagerData.pdb
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/Debug/netstandard2.1/CManagerData.csproj.AssemblyReference.cache
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/Debug/netstandard2.1/CManagerData.GeneratedMSBuildEditorConfig.editorconfig
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/Debug/netstandard2.1/CManagerData.AssemblyInfoInputs.cache
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/Debug/netstandard2.1/CManagerData.AssemblyInfo.cs
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/Debug/netstandard2.1/CManagerData.csproj.CoreCompileInputs.cache
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/Debug/netstandard2.1/CManagerData.dll
+/Users/illia_shevchenko/CManagerApp/CManagerServer/CManagerData/obj/Debug/netstandard2.1/CManagerData.pdb
