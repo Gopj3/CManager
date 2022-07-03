@@ -3,11 +3,8 @@ namespace CManagerData.Entities
 {
     public class BaseEntity
     {
-        public DateTime CreatedAt
-        {
-            get { return CreatedAt; }
-            set { CreatedAt = DateTime.Now; }
-        }
+        public Guid Id = Guid.NewGuid();
+        public DateTime CreatedAt = DateTime.Now;
     }
 }
 

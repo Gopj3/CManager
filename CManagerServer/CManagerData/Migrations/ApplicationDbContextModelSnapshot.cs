@@ -19,6 +19,23 @@ namespace CManagerData.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("CManagerData.Entities.Company", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Company");
+                });
+
             modelBuilder.Entity("CManagerData.Entities.Role", b =>
                 {
                     b.Property<Guid>("Id")
@@ -122,6 +139,24 @@ namespace CManagerData.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("CManagerData.Entities.UserCompany", b =>
+                {
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("UserRole")
+                        .HasColumnType("int");
+
+                    b.HasKey("CompanyId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserCompany");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -223,6 +258,25 @@ namespace CManagerData.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("CManagerData.Entities.UserCompany", b =>
+                {
+                    b.HasOne("CManagerData.Entities.Company", "Company")
+                        .WithMany("UsersCompanies")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CManagerData.Entities.User", "User")
+                        .WithMany("UsersCompanies")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("CManagerData.Entities.Role", null)
@@ -272,6 +326,16 @@ namespace CManagerData.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CManagerData.Entities.Company", b =>
+                {
+                    b.Navigation("UsersCompanies");
+                });
+
+            modelBuilder.Entity("CManagerData.Entities.User", b =>
+                {
+                    b.Navigation("UsersCompanies");
                 });
 #pragma warning restore 612, 618
         }

@@ -13,10 +13,18 @@
     <None Remove="Entities\" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="CManagerAPI\obj\CManagerApi.csproj.EntityFrameworkCore.targets" />
+    <None Remove="Configurations\" />
+    <None Remove="Enums\" />
+    <None Remove="Enums\Companies\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
     <Folder Include="Entities\" />
+    <Folder Include="Configurations\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Enums\Companies\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
