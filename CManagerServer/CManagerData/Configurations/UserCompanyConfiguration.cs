@@ -8,8 +8,8 @@ namespace CManagerData.Configurations
     {
         public static void ApplyConfig(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Company>().HasKey(bc => bc.Id);
-            modelBuilder.Entity<UserCompany>().HasKey(bc => new { bc.CompanyId, bc.UserId });
+            modelBuilder.Entity<Company>().ToTable("Companies").HasKey(bc => bc.Id);
+            modelBuilder.Entity<UserCompany>().ToTable("UserCompanies").HasKey(bc => new { bc.CompanyId, bc.UserId });
             modelBuilder.Entity<UserCompany>()
                 .HasOne(bc => bc.Company)
                 .WithMany(bc => bc.UsersCompanies)

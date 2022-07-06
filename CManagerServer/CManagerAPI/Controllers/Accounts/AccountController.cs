@@ -3,13 +3,11 @@ using CManagerApplication.Common.Helpers;
 using CManagerApplication.Models.Requests.Account;
 using CManagerApplication.Models.Results.Account;
 using CManagerData.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CManagerAPI.Controllers.Accounts
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class AccountController : ControllerBase
@@ -29,7 +27,6 @@ namespace CManagerAPI.Controllers.Accounts
             _jwtHelper = jwtHelper;
         }
 
-        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegisterRequest model)
         {
@@ -63,7 +60,6 @@ namespace CManagerAPI.Controllers.Accounts
         }
 
 
-        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> LoginAsync([FromBody] LoginRequest model)
         {

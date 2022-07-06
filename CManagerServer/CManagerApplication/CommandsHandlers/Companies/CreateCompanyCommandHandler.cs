@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using CManagerApplication.Commands.Companies;
 using CManagerApplication.Exceptions;
+using CManagerApplication.Models.Dto.Companies;
 using CManagerData.DataAccess;
 using CManagerData.Entities;
 using MediatR;
@@ -10,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CManagerApplication.CommandsHandlers.Companies
 {
-    public class CreateCompanyCommandHandler: IRequestHandler<CreateCompanyCommand, Company>
+    public class CreateCompanyCommandHandler: IRequestHandler<CreateCompanyCommand, CompanyCreatedResult>
     {
         private readonly ILogger _logger;
         private readonly GlobalDataAccess _globalDataAccess;
@@ -24,7 +25,7 @@ namespace CManagerApplication.CommandsHandlers.Companies
             _logger = logger;
         }
 
-        public async Task<Company> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
+        public async Task<CompanyCreatedResult> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
         {
             var user = await _globalDataAccess._userDataAccess
                 .GetSingleById(request.CreatorId, cancellationToken);
@@ -45,7 +46,7 @@ namespace CManagerApplication.CommandsHandlers.Companies
                 company.UsersCompanies.Add(new UserCompany { Company = company, User = user });
                 await _globalDataAccess._companyDataAccess.AddAsync(company, cancellationToken);
 
-                return company;
+                return new CompanyCreatedResult{ Id = company.Id };
             } catch (Exception e)
             {
                 _logger.LogError($"Error while company creation {e.Message} {e.InnerException}");

@@ -1,17 +1,27 @@
 ﻿<Properties StartupConfiguration="{ECB283D6-E2EA-475A-B73B-D13E00F6B8CE}|Default">
-  <MonoDevelop.Ide.ItemProperties.CManagerAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CManagerAPI/Helpers/Middlewares/ExceptionHandlerMiddleware.cs">
+    <Files>
+      <File FileName="CManagerAPI/Helpers/Middlewares/ExceptionHandlerMiddleware.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Option id="ShowAllFiles" value="True" />
-          <Node name="CManagerServer" expanded="True" />
+          <Node name="CManagerServer" expanded="True">
+            <Node name="CManagerAPI" expanded="True">
+              <Node name="Configurations" expanded="True" />
+              <Node name="Helpers" expanded="True">
+                <Node name="Middlewares" expanded="True">
+                  <Node name="ExceptionHandlerMiddleware.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -19,4 +29,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CManagerAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
