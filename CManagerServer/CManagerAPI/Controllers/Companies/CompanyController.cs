@@ -60,6 +60,17 @@ namespace CManagerAPI.Controllers.Companies
             return Ok(result);
         }
 
+        [HttpGet("list")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> GetListByUserAsync()
+        {
+            var userId = HttpContext.GetUserId();
+            var query = new GetUserCompaniesListQuery { UserId = userId };
+            var result = await _mediator.Send(query);
+
+            return Ok(result);
+        }
+
         [HttpPost("{id}/logo")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> UploadLogoAsync(string id)

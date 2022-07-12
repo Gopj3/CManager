@@ -1,12 +1,25 @@
 ﻿<Properties StartupConfiguration="{ECB283D6-E2EA-475A-B73B-D13E00F6B8CE}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.CManagerAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CManagerAPI/Helpers/Middlewares/ExceptionHandlerMiddleware.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CManagerAPI/Controllers/Accounts/AccountController.cs">
     <Files>
-      <File FileName="CManagerAPI/Helpers/Middlewares/ExceptionHandlerMiddleware.cs" Line="1" Column="1" />
+      <File FileName="CManagerData/Entities/ProjectUser.cs" Line="6" Column="18" />
+      <File FileName="CManagerData/Enums/Tasks/TaskStatusEnum.cs" Line="6" Column="8" />
+      <File FileName="CManagerData/Configurations/ProjectConfiguration.cs" Line="11" Column="36" />
+      <File FileName="CManagerData/ApplicationDbContext.cs" Line="46" Column="42" />
+      <File FileName="CManagerData/Configurations/UserCompanyConfiguration.cs" Line="9" Column="57" />
+      <File FileName="CManagerData/Entities/User.cs" Line="12" Column="30" />
+      <File FileName="CManagerData/Configurations/TaskConfiguration.cs" Line="8" Column="32" />
+      <File FileName="CManagerData/Entities/Company.cs" Line="6" Column="30" />
+      <File FileName="CManagerData/Entities/Logo.cs" Line="1" Column="1" />
+      <File FileName="CManagerData/Entities/BaseEntity.cs" Line="6" Column="18" />
+      <File FileName="CManagerData/Configurations/LogoConfiguration.cs" Line="9" Column="56" />
+      <File FileName="CManagerAPI/Controllers/Accounts/AccountController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,11 +27,15 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="CManagerServer" expanded="True">
             <Node name="CManagerAPI" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="Accounts" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="CManagerData" expanded="True">
               <Node name="Configurations" expanded="True" />
-              <Node name="Helpers" expanded="True">
-                <Node name="Middlewares" expanded="True">
-                  <Node name="ExceptionHandlerMiddleware.cs" selected="True" />
-                </Node>
+              <Node name="Entities" expanded="True" />
+              <Node name="Enums" expanded="True">
+                <Node name="Projects" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -29,6 +46,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.CManagerAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

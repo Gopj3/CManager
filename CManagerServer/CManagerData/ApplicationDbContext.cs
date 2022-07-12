@@ -14,6 +14,9 @@ namespace CManagerData
         public DbSet<Company> Companies { get; set; }
         public DbSet<UserCompany> UserCompanies { get; set; }
         public DbSet<Logo> Logos { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectTask> ProjectTasks { get; set; }
+        public DbSet<ProjectUser> ProjectUsers { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {
@@ -37,8 +40,10 @@ namespace CManagerData
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            UserCompanyConfiguration.ApplyConfig(modelBuilder);
-            LogoConfiguration.ApplyConfig(modelBuilder);
+            modelBuilder.ApplyUserCompanyConfiguration();
+            modelBuilder.ApplyLogoConfiguration();
+            modelBuilder.ApplyProjectConfiguration();
+            modelBuilder.ApplyTasksConfig();
         }
     }
 }

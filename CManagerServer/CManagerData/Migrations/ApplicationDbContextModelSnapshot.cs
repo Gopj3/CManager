@@ -61,6 +61,71 @@ namespace CManagerData.Migrations
                     b.ToTable("Logos");
                 });
 
+            modelBuilder.Entity("CManagerData.Entities.Project", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("CManagerData.Entities.ProjectTask", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AssigneeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProjectId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssigneeId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectTasks");
+                });
+
+            modelBuilder.Entity("CManagerData.Entities.ProjectUser", b =>
+                {
+                    b.Property<Guid>("ProjectId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("UserRole")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProjectId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ProjectUsers");
+                });
+
             modelBuilder.Entity("CManagerData.Entities.Role", b =>
                 {
                     b.Property<Guid>("Id")
@@ -283,6 +348,44 @@ namespace CManagerData.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("CManagerData.Entities.ProjectTask", b =>
+                {
+                    b.HasOne("CManagerData.Entities.User", "Assignee")
+                        .WithMany()
+                        .HasForeignKey("AssigneeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CManagerData.Entities.Project", "Project")
+                        .WithMany("ProjectTasks")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Assignee");
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("CManagerData.Entities.ProjectUser", b =>
+                {
+                    b.HasOne("CManagerData.Entities.Project", "Project")
+                        .WithMany("ProjectUsers")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CManagerData.Entities.User", "User")
+                        .WithMany("PorjectUsers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CManagerData.Entities.UserCompany", b =>
                 {
                     b.HasOne("CManagerData.Entities.Company", "Company")
@@ -358,8 +461,17 @@ namespace CManagerData.Migrations
                     b.Navigation("UsersCompanies");
                 });
 
+            modelBuilder.Entity("CManagerData.Entities.Project", b =>
+                {
+                    b.Navigation("ProjectTasks");
+
+                    b.Navigation("ProjectUsers");
+                });
+
             modelBuilder.Entity("CManagerData.Entities.User", b =>
                 {
+                    b.Navigation("PorjectUsers");
+
                     b.Navigation("UsersCompanies");
                 });
 #pragma warning restore 612, 618

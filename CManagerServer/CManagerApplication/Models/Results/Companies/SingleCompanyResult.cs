@@ -1,4 +1,6 @@
 ﻿using System;
+using CManagerData.Enums.Companies;
+
 namespace CManagerApplication.Models.Results.Companies
 {
     public class SingleCompanyResult
@@ -6,6 +8,7 @@ namespace CManagerApplication.Models.Results.Companies
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string? Description { get; set; }
+        public string? UserRoleInCompany { get; set; }
     }
 }
 

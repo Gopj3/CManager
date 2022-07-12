@@ -10,6 +10,7 @@ namespace CManagerData.Entities
         public string LastName { get; set; }
         public string Phone { get; set; }
         public List<UserCompany> UsersCompanies = new List<UserCompany>();
+        public List<ProjectUser> PorjectUsers = new List<ProjectUser>();
     }
 }
 

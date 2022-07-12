@@ -17,6 +17,8 @@
     <None Remove="Enums\" />
     <None Remove="Enums\Companies\" />
     <None Remove="Migrations\" />
+    <None Remove="Enums\Projects\" />
+    <None Remove="Enums\Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
@@ -25,6 +27,8 @@
     <Folder Include="Enums\" />
     <Folder Include="Enums\Companies\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Enums\Projects\" />
+    <Folder Include="Enums\Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />

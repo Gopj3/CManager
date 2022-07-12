@@ -6,7 +6,7 @@ namespace CManagerData.Configurations
 {
     public static class UserCompanyConfiguration
     {
-        public static void ApplyConfig(ModelBuilder modelBuilder)
+        public static void ApplyUserCompanyConfiguration(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Company>().ToTable("Companies").HasKey(bc => bc.Id);
             modelBuilder.Entity<UserCompany>().ToTable("UserCompanies").HasKey(bc => new { bc.CompanyId, bc.UserId });
