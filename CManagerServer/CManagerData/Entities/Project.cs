@@ -8,9 +8,8 @@ namespace CManagerData.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public ProjectStatusEnum Status { get; set; }
-        public List<ProjectUser> ProjectUsers = new List<ProjectUser>();
-        public List<ProjectTask> ProjectTasks = new List<ProjectTask>();
-
+        public List<ProjectUser> ProjectUsers { get; set; }
+        public List<ProjectTask> ProjectTasks { get; set; }
     }
 }
 

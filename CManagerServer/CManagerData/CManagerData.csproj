@@ -25,7 +25,7 @@
     <Folder Include="Entities\" />
     <Folder Include="Configurations\" />
     <Folder Include="Enums\" />
-    <Folder Include="Enums\Companies\" />
+    <Folder Include="Migrations" />
     <Folder Include="Migrations\" />
     <Folder Include="Enums\Projects\" />
     <Folder Include="Enums\Tasks\" />

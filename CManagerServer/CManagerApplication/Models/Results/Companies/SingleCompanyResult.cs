@@ -1,5 +1,4 @@
 ﻿using System;
-using CManagerData.Enums.Companies;
 
 namespace CManagerApplication.Models.Results.Companies
 {

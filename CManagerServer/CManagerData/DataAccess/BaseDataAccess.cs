@@ -22,6 +22,7 @@ namespace CManagerData.DataAccess
             await _appContext.Set<T>().AddAsync(entity, cancellationToken);
             await _appContext.SaveChangesAsync(cancellationToken);
         }
+
         public async Task AddRangeAsync(IEnumerable<T> entity, CancellationToken cancellationToken)
         {
             await _appContext.Set<T>().AddRangeAsync(entity, cancellationToken);
@@ -30,24 +31,26 @@ namespace CManagerData.DataAccess
 
         public async Task DeleteAsync(T entity, CancellationToken cancellationToken)
         {
-            T existing = await _appContext.Set<T>().FindAsync(entity, cancellationToken);
+            var existing = await _appContext.Set<T>().FindAsync(entity, cancellationToken);
             if (existing != null) _appContext.Set<T>().Remove(existing);
             await _appContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> predicate,
+            CancellationToken cancellationToken)
         {
-            return await _appContext.Set<T>().Where(predicate).AsNoTracking().ToListAsync<T>(cancellationToken);
+            return await _appContext.Set<T>().AsNoTracking().Where(predicate).ToListAsync(cancellationToken);
         }
 
         public async Task<IEnumerable<T>> GetAsync()
         {
-            return await _appContext.Set<T>().AsNoTracking().ToListAsync<T>();
+            return await _appContext.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public async Task<T> GetSingleByPredicate(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public async Task<T> GetSingleByPredicate(Expression<Func<T, bool>> predicate,
+            CancellationToken cancellationToken)
         {
-            return await _appContext.Set<T>().AsNoTracking().Where(predicate).FirstOrDefaultAsync(cancellationToken);
+            return await _appContext.Set<T>().Where(predicate).FirstOrDefaultAsync(cancellationToken);
         }
 
         public async Task Update(T entity, CancellationToken cancellationToken)
@@ -58,4 +61,3 @@ namespace CManagerData.DataAccess
         }
     }
 }
-

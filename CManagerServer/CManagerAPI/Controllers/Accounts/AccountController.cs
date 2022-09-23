@@ -28,12 +28,14 @@ namespace CManagerAPI.Controllers.Accounts
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterAsync([FromBody] RegisterRequest model)
+        public async Task<IActionResult> RegisterAsync([FromBody] RegisterRequest? model)
         {
             if (model == null || !ModelState.IsValid)
             {
-                var modelStateErrors = ModelState.Select(x => x.Value?.Errors?
-                    .FirstOrDefault(el => el.ErrorMessage != null)).Select(el => el?.ErrorMessage)
+                var modelStateErrors = ModelState
+                    .Select(x =>
+                        x.Value?.Errors?.FirstOrDefault(el => el.ErrorMessage != null)
+                    ).Select(el => el?.ErrorMessage)
                     .ToList();
 
                 return BadRequest(new RegistrationResult { Errors = modelStateErrors });
@@ -51,12 +53,12 @@ namespace CManagerAPI.Controllers.Accounts
 
             if (result.Succeeded)
             {
-                return Ok(new RegistrationResult { IsSuccessfulRegistration = true});
+                return Ok(new RegistrationResult { IsSuccessfulRegistration = true });
             }
 
             var errors = result.Errors.Select(e => e.Description);
 
-            return BadRequest(new RegistrationResult { IsSuccessfulRegistration = false, Errors = errors}) ;
+            return BadRequest(new RegistrationResult { IsSuccessfulRegistration = false, Errors = errors });
         }
 
 
@@ -65,9 +67,8 @@ namespace CManagerAPI.Controllers.Accounts
         {
             var user = await _userManager.FindByNameAsync(model.Email);
 
-
             if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
-                return Unauthorized(new AuthResult { ErrorMessage = "Invalid Authentication" });
+                return Unauthorized(new AuthResult { ErrorMessage = "Invalid credentials" });
 
             var signingCredentials = _jwtHelper.GetSigningCredentials();
             var claims = _jwtHelper.GetClaims(user);
@@ -78,4 +79,3 @@ namespace CManagerAPI.Controllers.Accounts
         }
     }
 }
-

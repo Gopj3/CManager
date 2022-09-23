@@ -19,48 +19,6 @@ namespace CManagerData.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CManagerData.Entities.Company", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("LogoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Companies");
-                });
-
-            modelBuilder.Entity("CManagerData.Entities.Logo", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<byte[]>("DataFiles")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("FileType")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Logos");
-                });
-
             modelBuilder.Entity("CManagerData.Entities.Project", b =>
                 {
                     b.Property<Guid>("Id")
@@ -69,6 +27,9 @@ namespace CManagerData.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -90,10 +51,16 @@ namespace CManagerData.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Priority")
+                        .HasColumnType("int");
+
                     b.Property<Guid>("ProjectId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StoryPoints")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -227,24 +194,6 @@ namespace CManagerData.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("CManagerData.Entities.UserCompany", b =>
-                {
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("UserRole")
-                        .HasColumnType("int");
-
-                    b.HasKey("CompanyId", "UserId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserCompanies");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -386,25 +335,6 @@ namespace CManagerData.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CManagerData.Entities.UserCompany", b =>
-                {
-                    b.HasOne("CManagerData.Entities.Company", "Company")
-                        .WithMany("UsersCompanies")
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CManagerData.Entities.User", "User")
-                        .WithMany("UsersCompanies")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("CManagerData.Entities.Role", null)
@@ -456,11 +386,6 @@ namespace CManagerData.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CManagerData.Entities.Company", b =>
-                {
-                    b.Navigation("UsersCompanies");
-                });
-
             modelBuilder.Entity("CManagerData.Entities.Project", b =>
                 {
                     b.Navigation("ProjectTasks");
@@ -471,8 +396,6 @@ namespace CManagerData.Migrations
             modelBuilder.Entity("CManagerData.Entities.User", b =>
                 {
                     b.Navigation("PorjectUsers");
-
-                    b.Navigation("UsersCompanies");
                 });
 #pragma warning restore 612, 618
         }

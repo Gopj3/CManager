@@ -12,6 +12,10 @@ namespace CManagerData.Configurations
                 .HasOne(x => x.Project)
                 .WithMany(x => x.ProjectTasks)
                 .HasForeignKey(x => x.ProjectId);
+            modelBuilder.Entity<ProjectTask>()
+                .HasOne(x => x.Assignee)
+                .WithMany()
+                .HasForeignKey(x => x.AssigneeId);
         }
     }
 }

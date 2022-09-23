@@ -35,7 +35,6 @@
   <ItemGroup>
     <Folder Include="Controllers\Accounts\" />
     <Folder Include="Configurations\" />
-    <Folder Include="Controllers\Companies\" />
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\Middlewares\" />
     <Folder Include="Helpers\Users\" />

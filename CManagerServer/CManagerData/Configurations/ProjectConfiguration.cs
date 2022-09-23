@@ -19,7 +19,6 @@ namespace CManagerData.Configurations
                 .HasOne(bc => bc.Project)
                 .WithMany(bc => bc.ProjectUsers)
                 .HasForeignKey(bc => bc.ProjectId);
-
         }
     }
 }

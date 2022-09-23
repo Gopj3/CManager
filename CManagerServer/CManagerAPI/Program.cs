@@ -16,7 +16,7 @@ var connectionString = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddControllers();
 
 //Add services to the container.
-builder.Services.AddScoped<GlobalDataAccess>(c => new GlobalDataAccess(connectionString));
+builder.Services.AddScoped(c => new GlobalDataAccess(connectionString));
 
 builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
 

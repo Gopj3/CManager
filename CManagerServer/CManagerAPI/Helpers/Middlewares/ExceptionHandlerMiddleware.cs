@@ -34,6 +34,9 @@ namespace CManagerAPI.Helpers.Middlewares
                     case AccessDeniedException:
                         response.StatusCode = (int)HttpStatusCode.Forbidden;
                         break;
+                    case InvalidIdException:
+                        response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        break;
                     default:
                         response.StatusCode = (int) HttpStatusCode.InternalServerError;
                         break;

@@ -11,9 +11,6 @@ namespace CManagerData
     {
         private string _connection { get; set; }
 
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<UserCompany> UserCompanies { get; set; }
-        public DbSet<Logo> Logos { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectTask> ProjectTasks { get; set; }
         public DbSet<ProjectUser> ProjectUsers { get; set; }
@@ -33,15 +30,13 @@ namespace CManagerData
             {
                 optionsBuilder.UseSqlServer(_connection);
             }
-
+            
             base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyUserCompanyConfiguration();
-            modelBuilder.ApplyLogoConfiguration();
             modelBuilder.ApplyProjectConfiguration();
             modelBuilder.ApplyTasksConfig();
         }
