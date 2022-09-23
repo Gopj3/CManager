@@ -1,18 +1,18 @@
-﻿using System;
-namespace CManagerData.DataAccess
+﻿namespace CManagerData.DataAccess
 {
     public class GlobalDataAccess
     {
-        public readonly UserCompanyDataAccess _userCompanyDataAccess;
+        public readonly ProjectDataAccess _projectDataAccess;
+        public readonly ProjectUsersDataAccess _projectUsersDataAccess;
         public readonly UserDataAccess _userDataAccess;
-        public readonly CompanyDataAccess _companyDataAccess;
 
-        public GlobalDataAccess(ApplicationDbContext context)
+
+        public GlobalDataAccess(string connectionString)
         {
-            _userCompanyDataAccess = new UserCompanyDataAccess(context);
+            var context = new ApplicationDbContext(connectionString);
             _userDataAccess = new UserDataAccess(context);
-            _companyDataAccess = new CompanyDataAccess(context);
+            _projectDataAccess = new ProjectDataAccess(context);
+            _projectUsersDataAccess = new ProjectUsersDataAccess(context);
         }
     }
 }
-

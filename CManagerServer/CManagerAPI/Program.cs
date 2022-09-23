@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using CManagerAPI.Configurations;
+using CManagerAPI.Helpers.Middlewares;
 using CManagerApplication;
 using CManagerApplication.Common.Helpers;
 using CManagerData;
@@ -11,15 +12,13 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Database");
-var appContext = new ApplicationDbContext(connectionString);
 
 builder.Services.AddControllers();
 
 //Add services to the container.
-builder.Services.AddSingleton<ApplicationDbContext>(x => appContext);
-builder.Services.AddScoped<GlobalDataAccess>(c => new GlobalDataAccess(appContext));
+builder.Services.AddScoped(c => new GlobalDataAccess(connectionString));
 
-builder.Services.AddDbContext<ApplicationDbContext>();
+builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<JwtHelper>();
 
@@ -46,6 +45,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseRouting();

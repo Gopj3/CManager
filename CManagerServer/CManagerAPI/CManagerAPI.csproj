@@ -28,11 +28,16 @@
     <None Remove="Controllers\Companies\" />
     <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
     <None Remove="MediatR" />
+    <None Remove="Helpers\" />
+    <None Remove="Helpers\Middlewares\" />
+    <None Remove="Helpers\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Accounts\" />
     <Folder Include="Configurations\" />
-    <Folder Include="Controllers\Companies\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Helpers\Middlewares\" />
+    <Folder Include="Helpers\Users\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CManagerApplication\CManagerApplication.csproj">

@@ -24,32 +24,30 @@
     <None Remove="MediatR" />
     <None Remove="CommandsHandlers\Companies\" />
     <None Remove="Models\Dto\" />
-    <None Remove="Models\Dto\Companies\" />
     <None Remove="Exceptions\" />
     <None Remove="Models\Requests\Companies\" />
     <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
     <None Remove="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <None Remove="Queries\Companies\" />
+    <None Remove="Models\Results\Companies\" />
+    <None Remove="QueriesHandlers\Companies\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Models\Results\" />
     <Folder Include="Models\Requests\" />
-    <Folder Include="Models\Common\" />
     <Folder Include="Models\Requests\Account\" />
-    <Folder Include="Mappers\" />
     <Folder Include="Models\Results\Account\" />
     <Folder Include="Common\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Commands\" />
+    <Folder Include="Models\Results\Users" />
     <Folder Include="Queries\" />
     <Folder Include="CommandsHandlers\" />
     <Folder Include="QueriesHandlers\" />
-    <Folder Include="Commands\Companies\" />
-    <Folder Include="CommandsHandlers\Companies\" />
-    <Folder Include="Models\Dto\" />
-    <Folder Include="Models\Dto\Companies\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Models\Requests\Companies\" />
+    <Folder Include="Models\Results\Companies\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
