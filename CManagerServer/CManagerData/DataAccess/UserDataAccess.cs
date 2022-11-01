@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using CManagerData.Entities;
@@ -16,22 +15,6 @@ namespace CManagerData.DataAccess
         public async Task<User> GetSingleByIdAsync(Guid id, CancellationToken token)
         {
             return await _appContext.Users.SingleOrDefaultAsync(x => x.Id == id, token);
-        }
-
-        public async Task<User> GetSingleByIdWithProjects(Guid id, CancellationToken token)
-        {
-            return await _appContext.Users
-                .Include(x => x.PorjectUsers)
-                .ThenInclude(x => x.Project)
-                .SingleOrDefaultAsync(x => x.Id == id, token);
-        }
-
-        public async Task<User> GetSingleByIdWithProjectId(Guid id, Guid projectId, CancellationToken token)
-        {
-            return await _appContext.Users
-                .Include(x => x.PorjectUsers.Where(p => p.ProjectId == projectId))
-                .ThenInclude(x => x.Project)
-                .SingleOrDefaultAsync(x => x.Id == id, token);
         }
     }
 }

@@ -21,6 +21,7 @@
     <None Remove="Enums\Tasks\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Configurations" />
     <Folder Include="DataAccess\" />
     <Folder Include="Entities\" />
     <Folder Include="Configurations\" />

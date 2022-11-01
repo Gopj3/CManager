@@ -31,8 +31,9 @@ namespace CManagerData.DataAccess
 
         public async Task DeleteAsync(T entity, CancellationToken cancellationToken)
         {
-            var existing = await _appContext.Set<T>().FindAsync(entity, cancellationToken);
+            var existing = await _appContext.Set<T>().FindAsync(entity);
             if (existing != null) _appContext.Set<T>().Remove(existing);
+
             await _appContext.SaveChangesAsync(cancellationToken);
         }
 

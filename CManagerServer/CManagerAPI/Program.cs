@@ -1,12 +1,10 @@
-﻿using System.Reflection;
-using CManagerAPI.Configurations;
+﻿using CManagerAPI.Configurations;
 using CManagerAPI.Helpers.Middlewares;
 using CManagerApplication;
 using CManagerApplication.Common.Helpers;
 using CManagerData;
 using CManagerData.DataAccess;
 using CManagerData.Entities;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,8 +21,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connecti
 builder.Services.AddScoped<JwtHelper>();
 
 builder.Services.AddIdentity<User, Role>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.ConfigureJWT(builder.Configuration.GetSection("JWTSettings"));
 
@@ -57,4 +55,3 @@ app.MapControllers();
 app.UseCors();
 
 app.Run();
-
